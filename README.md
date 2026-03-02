@@ -2,7 +2,7 @@
 
 > **Save 45% on AI coding costs** — Use Cursor with Claude, GPT, Gemini through Crazyrouter.
 
-[Crazyrouter](https://crazyrouter.com?ref=github) is an AI API gateway — one key, 300+ models, 45% cheaper.
+[Crazyrouter](https://crazyrouter.com?utm_source=github&utm_medium=github&utm_campaign=dev_community?ref=github) is an AI API gateway — one key, 300+ models, 45% cheaper.
 
 ## 💰 Price Comparison
 
@@ -16,11 +16,11 @@
 ## ⚡ Setup (2 Minutes)
 
 ### 1. Get API Key
-Sign up at [crazyrouter.com](https://crazyrouter.com?ref=github)
+Sign up at [crazyrouter.com](https://crazyrouter.com?utm_source=github&utm_medium=github&utm_campaign=dev_community?ref=github)
 
 ### 2. Configure Cursor
 1. Open Cursor → **Settings** → **Models**
-2. Set **API Base URL**: `https://crazyrouter.com/v1`
+2. Set **API Base URL**: `https://crazyrouter.com?utm_source=github&utm_medium=github&utm_campaign=dev_community/v1`
 3. Set **API Key**: `sk-your-crazyrouter-key`
 4. Add models you want to use
 
@@ -32,7 +32,7 @@ Edit Cursor settings directly:
 
 ```json
 {
-  "openai.apiBaseUrl": "https://crazyrouter.com/v1",
+  "openai.apiBaseUrl": "https://crazyrouter.com?utm_source=github&utm_medium=github&utm_campaign=dev_community/v1",
   "openai.apiKey": "sk-your-crazyrouter-key"
 }
 ```
@@ -75,7 +75,7 @@ A: Yes, streaming works perfectly for real-time code generation.
 A: Yes, you can configure custom API as a fallback or for specific models.
 
 ## 🔗 Links
-- 🌐 [Crazyrouter](https://crazyrouter.com?ref=github)
+- 🌐 [Crazyrouter](https://crazyrouter.com?utm_source=github&utm_medium=github&utm_campaign=dev_community?ref=github)
 - 🖥️ [Cursor](https://cursor.com)
 - 💬 [Telegram Community](https://t.me/crzrouter)
 - 🐦 [Twitter @metaviiii](https://twitter.com/metaviiii)
