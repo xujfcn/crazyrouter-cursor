@@ -1,85 +1,19 @@
-# 🖥️ Use Cursor IDE with Crazyrouter
+# Cursor with Crazyrouter
 
-> **Save 45% on AI coding costs** — Use Cursor with Claude, GPT, Gemini through Crazyrouter.
+Updated 2026-10-12. Configure a supported custom model through Cursor's API-key settings.
 
-[Crazyrouter](https://crazyrouter.com?utm_source=github&utm_medium=github&utm_campaign=dev_community?ref=github) is an AI API gateway — one key, 300+ models, 45% cheaper.
+1. Create an API key at [Crazyrouter](https://crazyrouter.com/console/token).
+2. Open Cursor Settings → Models / API Keys. Labels may differ by Cursor version.
+3. Configure the OpenAI-compatible provider and override its base URL with `https://crazyrouter.com/v1`.
+4. Enter your key locally and add a supported exact model ID, such as `gpt-4o-mini` or `claude-sonnet-4-6`.
+5. Verify the key and send a small chat request before using it on a project.
 
-## 💰 Price Comparison
+Custom API keys apply only to features Cursor allows to use them. They do not replace a Cursor subscription or guarantee that Tab, Composer or every built-in feature uses this gateway. Check [Cursor's current API-key documentation](https://cursor.com/docs/settings/api-keys).
 
-| Model | Official (In/Out per 1M tokens) | Crazyrouter | Savings |
-|-------|--------------------------------|-------------|---------|
-| Claude Opus 4 | $15 / $75 | $8.25 / $41.25 | **45%** |
-| GPT-4o | $2.50 / $10 | $1.38 / $5.50 | **45%** |
-| Claude Sonnet 4 | $3 / $15 | $1.65 / $8.25 | **45%** |
-| Gemini 2.5 Pro | $1.25 / $10 | $0.69 / $5.50 | **45%** |
+Do not add UTM parameters to the API URL or paste invented `openai.apiBaseUrl` settings into VS Code settings. Use the controls documented by the installed Cursor version.
 
-## ⚡ Setup (2 Minutes)
+## Models, prices and errors
 
-### 1. Get API Key
-Sign up at [crazyrouter.com](https://crazyrouter.com?utm_source=github&utm_medium=github&utm_campaign=dev_community?ref=github)
+Read [current models](https://crazyrouter.com/en/models) and [prices](https://crazyrouter.com/en/pricing). Input/output/cache costs and account limits vary. This guide does not estimate Cursor subscription savings or promise unlimited usage.
 
-### 2. Configure Cursor
-1. Open Cursor → **Settings** → **Models**
-2. Set **API Base URL**: `https://crazyrouter.com?utm_source=github&utm_medium=github&utm_campaign=dev_community/v1`
-3. Set **API Key**: `sk-your-crazyrouter-key`
-4. Add models you want to use
-
-### 3. Start coding!
-
-## 📋 Settings JSON
-
-Edit Cursor settings directly:
-
-```json
-{
-  "openai.apiBaseUrl": "https://crazyrouter.com?utm_source=github&utm_medium=github&utm_campaign=dev_community/v1",
-  "openai.apiKey": "sk-your-crazyrouter-key"
-}
-```
-
-## 🎯 Recommended Model Setup
-
-| Cursor Feature | Model | Why |
-|---------------|-------|-----|
-| Tab Completion | `gpt-4o-mini` | Fast and cheap ($0.08/$0.33) |
-| Cmd+K Edit | `claude-sonnet-4-20250514` | Best code quality |
-| Chat | `claude-sonnet-4-20250514` | Good balance |
-| Composer | `claude-opus-4-20250514` | Complex multi-file tasks |
-
-This setup optimizes for both quality and cost.
-
-## 💡 Cursor Pro vs Crazyrouter
-
-| | Cursor Pro ($20/mo) | Crazyrouter (pay-per-use) |
-|--|---------------------|--------------------------|
-| Monthly cost | $20 fixed | ~$30-50 (heavy use) |
-| Usage limits | Yes (500 fast requests) | No limits |
-| Model choice | Limited | 300+ models |
-| Claude Opus | Limited | Unlimited |
-| Overage | Slow mode | Just pay for what you use |
-
-If you frequently hit Cursor Pro limits, Crazyrouter is more cost-effective.
-
-## ❓ FAQ
-
-**Q: Does Cursor work with Crazyrouter?**
-A: Yes, fully compatible. All features work — Tab, Chat, Composer, Cmd+K.
-
-**Q: Can I use Claude in Cursor?**
-A: Yes! Through Crazyrouter you get Claude, GPT, Gemini, and 300+ models.
-
-**Q: Is streaming supported?**
-A: Yes, streaming works perfectly for real-time code generation.
-
-**Q: Can I keep Cursor Pro and also use Crazyrouter?**
-A: Yes, you can configure custom API as a fallback or for specific models.
-
-## 🔗 Links
-- 🌐 [Crazyrouter](https://crazyrouter.com?utm_source=github&utm_medium=github&utm_campaign=dev_community?ref=github)
-- 🖥️ [Cursor](https://cursor.com)
-- 💬 [Telegram Community](https://t.me/crzrouter)
-- 🐦 [Twitter @metaviiii](https://twitter.com/metaviiii)
-
-## 📄 License
-MIT
-
+HTTP 400: check model capabilities and parameters. HTTP 401/403: check key and account permissions. HTTP 404: check model spelling and the request path. HTTP 429: check balance and rate limits.
